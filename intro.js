@@ -8,7 +8,7 @@ var addElement = function(e){
   newthing.addEventListener("mouseover", changeTitle);
   
   newthing.addEventListener("mouseleave", changeBack);
-  newthing.addEventListener("click", remove);
+  newthing.addEventListener("click", removed);
 };
 
 var button = document.getElementById("b");
@@ -23,13 +23,14 @@ var changeBack = function(e){
   heading.innerHTML = "Hello World!";
 };
 
-var remove = function(e){
+var removed = function(e){
   this.innerHTML = "remove";
+  list.removeChild(this);
 };
 
 for (i = 0; i<elements.length; i++){
   var element = elements[i];
   element.addEventListener("mouseover", changeTitle);
   element.addEventListener("mouseleave", changeBack);
-  element.addEventListener("click", remove);
+  element.addEventListener("click", removed);
 }
