@@ -1,12 +1,14 @@
 var list = document.getElementById("thelist");
 var elements = document.getElementsByTagName("li");
+var num = 8;
 
 var addElement = function(e){
   var newthing = document.createElement("li");
-  newthing.innerHTML = "item x";
+  newthing.innerHTML = "thing " + num;
+  num++;
   list.appendChild(newthing);
   newthing.addEventListener("mouseover", changeTitle);
-  
+
   newthing.addEventListener("mouseleave", changeBack);
   newthing.addEventListener("click", removed);
 };
