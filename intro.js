@@ -13,7 +13,7 @@ var fib = function(n) {
     return 1;
   }
   return fib(n - 1) + fib(n - 2);
-}
+};
 
 var addElement = function(e){
   var newthing = document.createElement("li");
@@ -28,8 +28,7 @@ var addElement = function(e){
 var button = document.getElementById("b");
 button.addEventListener("click", addElement);
 
-var fibutton = document.getElementById("bfib");
-fibutton.addEventListener("click", addFib);
+
 
 var heading = document.getElementById("h");
 var changeTitle = function(e){
@@ -59,10 +58,13 @@ var addFib = function(e) {
   newt.innerHTML = "" + fib(curfib);
   curfib++;
   listfib.appendChild(newt);
-  newt.addEventListener("mouseover", changeTitle);
-  newt.addEventListener("mouseleave", changeBack);
-  newt.addEventListener("click", fibremoved);
-}
+  // newt.addEventListener("mouseover", changeTitle);
+  // newt.addEventListener("mouseleave", changeBack);
+  // newt.addEventListener("click", fibremoved);
+};
+
+var fibutton = document.getElementById("bfib");
+fibutton.addEventListener("click", addFib);
 
 for (i = 0; i<elements.length; i++){
   var element = elements[i];
