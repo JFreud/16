@@ -45,11 +45,7 @@ var removed = function(e){
   list.removeChild(this);
 };
 
-var fibremoved = function(e){
-  this.innerHTML = "remove";
-  curfib--;
-  list.removeChild(this);
-};
+
 
 var addFib = function(e) {
   console.log("afboawbaw");
@@ -58,9 +54,15 @@ var addFib = function(e) {
   newt.innerHTML = "" + fib(curfib);
   curfib++;
   listfib.appendChild(newt);
-  // newt.addEventListener("mouseover", changeTitle);
-  // newt.addEventListener("mouseleave", changeBack);
-  // newt.addEventListener("click", fibremoved);
+  newt.addEventListener("mouseover", changeTitle);
+  newt.addEventListener("mouseleave", changeBack);
+  newt.addEventListener("click", fibremoved);
+};
+
+var fibremoved = function(e){
+  this.innerHTML = "remove";
+  curfib--;
+  listfib.removeChild(this);
 };
 
 var fibutton = document.getElementById("bfib");
